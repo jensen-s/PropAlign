@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.*?>  
+<?import javafx.scene.*?>  
+<?import javafx.scene.control.*?>  
+<?import javafx.geometry.*?>  
+<?import javafx.scene.layout.*?>  
+<?import javafx.scene.control.cell.*?>
+  
+<VBox id="vbox" prefHeight="400" prefWidth="800"  
+      xmlns:fx="http://javafx.com/fxml"  
+      fx:controller="org.jensen.propedit.gui.MainWindowController">
+      <children>  
+   <MenuBar fx:id="menuBar" onKeyPressed="#handleKeyInput">  
+      <menus>  
+         <Menu text="File">  
+            <items>  
+               <MenuItem text="New"/>  
+               <MenuItem text="Open"/>  
+               <MenuItem text="Save"/>  
+               <MenuItem text="Save As"/>  
+               <SeparatorMenuItem  />  
+               <MenuItem text="Exit"/>  
+            </items>  
+         </Menu>  
+         <Menu text="JavaFX 2.0 Examples">  
+            <items>  
+               <MenuItem text="Text Example"/>  
+               <MenuItem text="Objects Example"/>  
+               <MenuItem text="Animation Example"/>  
+            </items>  
+         </Menu>  
+         <Menu text="Help">  
+            <items>  
+               <MenuItem text="Search" disable="true"/>  
+               <MenuItem text="Online Manual" visible="false"/>  
+               <SeparatorMenuItem />  
+               <MenuItem text="About" onAction="#handleAboutAction"/>  
+            </items>  
+         </Menu>  
+      </menus>  
+   </MenuBar>
+   <SplitPane orientation="HORIZONTAL">
+   	<items>
+   		<SplitPane orientation="VERTICAL" >
+   			<items>
+		   		 <TableView fx:id="table" editable="true">
+			       <columns>
+				        <TableColumn text="Bundle" minWidth="50">
+				        	<cellValueFactory>
+				        		<PropertyValueFactory property="name"/>
+				        	</cellValueFactory>
+				        </TableColumn>        	
+				      </columns>
+			      </TableView>
+			      <VBox>
+			      <children>
+			      	<Label text="Name" />
+			      	<Label text="Path" />
+		   		 <TableView fx:id="table" editable="true">
+			       <columns>
+				        <TableColumn text="Language" minWidth="50">
+				        	<cellValueFactory>
+				        		<PropertyValueFactory property="name"/>
+				        	</cellValueFactory>
+				        </TableColumn>        
+				      </columns>
+			      </TableView>
+			      </children>
+   			</VBox>
+   			</items>
+   		</SplitPane>
+		 <TableView fx:id="propertyTable" editable="true">
+	      </TableView>
+	</items>
+   </SplitPane>
+   </children>  
+</VBox>  
